@@ -1,5 +1,5 @@
 <template>
-  <v-container class="fill-height d-flex align-center justify-center">
+  <div>
     <v-card class="pa-4" width="400" variant="text">
       <v-card-title class="text-center">{{ $t('register.title') }}</v-card-title>
       <v-card-text>
@@ -27,7 +27,7 @@
         </v-form>
       </v-card-text>
     </v-card>
-  </v-container>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -35,10 +35,15 @@ import _ from 'lodash'
 
 const { $axios } = useNuxtApp()
 const route = useRoute()
+const router = useRouter()
 const userStore = useUserStore()
 
 useHead({
   title: '註冊'
+})
+
+definePageMeta({
+  layout: 'clear'
 })
 
 const formRef = ref()
@@ -82,11 +87,16 @@ const submit = async () => {
     const rs = await $axios.auth.register(forms.value)
     if (!rs.length) {
       userStore.setUserInfo(_.omit(forms.value, 'sms'))
+      router.push('/home')
     } else {
       errorMessages.value = rs
     }
   }
 }
+
+onBeforeMount(() => {
+  if (!route.query.phone) router.push('/login')
+})
 
 onMounted(() => {
   forms.value.phone = route.query.phone
@@ -94,12 +104,6 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.v-container {
-  margin: 0;
-  max-width: 100%;
-  background: linear-gradient(to top right, var(--main-color), var(--second-color));
-}
-
 .v-card {
   background: #fff;
 }

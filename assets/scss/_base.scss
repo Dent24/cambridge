@@ -16,7 +16,12 @@ html {
   -webkit-text-size-adjust: 100%; /* 防止移動設備縮放文字 */
 }
 
-body,
-.v-container {
+body {
   min-height: 100vh;
+}
+
+.v-container {
+  margin: 0;
+  max-width: 100% !important;
+  background: linear-gradient(to top right, var(--main-color), var(--second-color));
 }

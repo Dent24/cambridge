@@ -1,5 +1,5 @@
 <template>
-  <v-container class="fill-height d-flex align-center justify-center">
+  <div>
     <v-card class="pa-4" width="400" variant="text">
       <v-card-title class="text-center">{{ $t('login.title') }}</v-card-title>
       <v-card-text>
@@ -28,7 +28,7 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </v-container>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -38,6 +38,10 @@ const userStore = useUserStore()
 
 useHead({
   title: '登入'
+})
+
+definePageMeta({
+  layout: 'clear'
 })
 
 const loginDialog = ref(false)
@@ -72,6 +76,7 @@ const login = async () => {
         const userRs = await $axios.user.getProfile(phone.value)
         if (userRs) {
           userStore.setUserInfo(userRs)
+          router.push('/home')
         }
       } else {
         smsError.value = true
@@ -88,12 +93,6 @@ const reSend = async () =>{
 </script>
 
 <style scoped lang="scss">
-.v-container {
-  margin: 0;
-  max-width: 100%;
-  background: linear-gradient(to top right, var(--main-color), var(--second-color));
-}
-
 .v-card {
   background: #fff;
 }
