@@ -17,5 +17,16 @@ export default () => {
     reSendSms: async (phone: string) => {
       return true
     },
+
+    register: async (data: Object) => {
+      const errors = []
+      if (data.sms != '111111') {
+        errors.push('驗證碼錯誤')
+      }
+      if (data.email == 'test@test.com') {
+        errors.push('此電子信箱已被註冊')
+      }
+      return errors
+    },
   }
 }

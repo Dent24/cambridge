@@ -34,6 +34,7 @@
 <script setup lang="ts">
 const { $axios } = useNuxtApp()
 const router = useRouter()
+const userStore = useUserStore()
 
 useHead({
   title: '登入'
@@ -68,7 +69,10 @@ const login = async () => {
       smsError.value = false
       const rs = await $axios.auth.checkSms(phone.value, sms.value)
       if (!!rs) {
-        console.log('done')
+        const userRs = await $axios.user.getProfile(phone.value)
+        if (userRs) {
+          userStore.setUserInfo(userRs)
+        }
       } else {
         smsError.value = true
       }
