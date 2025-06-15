@@ -1,0 +1,19 @@
+{
+  "login": {
+    "title": "選擇以下登入方式",
+    "byPhone": "透過手機號碼登入",
+    "phone": "手機號碼",
+    "submit": "送出",
+    "sendSms": "發送驗證碼",
+    "sms": "驗證碼",
+    "reSend": "重發驗證碼",
+    "smsError": "驗證碼錯誤"
+  },
+  "register": {
+    "title": "註冊帳號",
+    "name": "姓名",
+    "email": "電子信箱",
+    "password": "密碼",
+    "submit": "註冊"
+  }
+}

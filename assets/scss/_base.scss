@@ -1,0 +1,22 @@
+:root {
+  --main-color: #f99c05;
+  --second-color: #9cc4ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* 防止移動設備縮放文字 */
+}
+
+body,
+.v-container {
+  min-height: 100vh;
+}
