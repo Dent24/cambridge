@@ -19,4 +19,8 @@
 ::v-deep(.v-toolbar__content) {
   background-color: var(--main-color);
 }
+
+::v-deep(.v-container) {
+  padding: 0;
+}
 </style>
