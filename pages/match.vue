@@ -81,14 +81,31 @@ onBeforeMount(async () => {
 .main-area {
   width: 600px;
 
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+    flex-grow: 1;
+  }
+
   .now-card {
     margin-top: 24px;
     height: 800px;
     background: #ccc;
     border-radius: 24px;
+    overflow: hidden;
+
+    @media screen and (max-width: 600px) {
+      margin-top: 0;
+      height: calc(100vh - 64px);
+      border-radius: 0;
+    }
 
     .now-image {
       height: 100%;
+
+      @media screen and (max-width: 600px) {
+        width: 100vw;
+        height: 100%;
+      }
     }
 
     .simple-info {

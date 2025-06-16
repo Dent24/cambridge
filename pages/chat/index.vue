@@ -31,6 +31,10 @@ onBeforeMount(async () => {
   height: 100%;
   background: #fff;
 
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
+
   .chat-list {
     padding: 0;
   }

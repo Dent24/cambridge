@@ -49,6 +49,10 @@ const imageOnError = (e: any) => {
   height: 200px;
   background: #ccc;
 
+  @media screen and (max-width: 600px) {
+    height: 33vw;
+  }
+
   .user-image {
     width: 100%;
   }
@@ -58,6 +62,10 @@ const imageOnError = (e: any) => {
     left: 8px;
     bottom: 8px;
     font-size: 14px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 10px;
+    }
   }
 
   .corner-indicator {

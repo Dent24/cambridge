@@ -4,7 +4,7 @@
       <img v-if="!imageError" :src="props.item.image" class="user-image" @error="imageOnError" />
       <div v-else class="user-image" />
     </template>
-    <div class="chat-info d-flex align-center justify-space-between pr-4">
+    <div class="chat-info d-sm-flex align-center justify-space-between pr-4">
       <div class="font-weight-bold" :class="props.item.notRead || 'text-grey'">{{ props.item.name }}</div>
       <div class="text-grey">{{ dayjs(props.item.lastTime).format('YYYY/MM/DD HH:mm') }}</div>
     </div>
@@ -52,6 +52,11 @@ const imageOnError = () => {
     height: 150px;
     background: #ccc;
     border-radius: 8px;
+
+    @media screen and (max-width: 600px) {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   .not-read-count {

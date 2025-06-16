@@ -92,6 +92,10 @@ onBeforeMount(async () => {
 .main-area {
   width: 600px;
   background: #fff;
+
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
 }
 
 .info-block {

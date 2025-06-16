@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="pa-4" width="400" variant="text">
+    <v-card class="pa-4 register" variant="text">
       <v-card-title class="text-center">{{ $t('register.title') }}</v-card-title>
       <v-card-text>
         <v-form ref="formRef">
@@ -105,7 +105,12 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
-.v-card {
+.register {
   background: #fff;
+  width: 400px;
+
+  @media screen and (max-width: 400px) {
+    width: 100vw;
+  }
 }
 </style>

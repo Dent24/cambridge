@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="pa-4" width="400" variant="text">
+    <v-card class="pa-4 login" variant="text">
       <v-card-title class="text-center">{{ $t('login.title') }}</v-card-title>
       <v-card-text>
         <v-btn rounded="xl" size="x-large" block variant="outlined"  color="orange-darken-1" @click="loginDialog = true">{{ $t('login.byPhone') }}</v-btn>
@@ -94,7 +94,12 @@ const reSend = async () =>{
 </script>
 
 <style scoped lang="scss">
-.v-card {
+.login {
   background: #fff;
+  width: 400px;
+
+  @media screen and (max-width: 400px) {
+    width: 100vw;
+  }
 }
 </style>
