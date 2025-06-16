@@ -3,8 +3,12 @@
     <v-app-bar app color="primary">
       <v-toolbar-title>My APP</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text to="/home">首頁</v-btn>
-      <v-btn text to="/login">我的檔案</v-btn>
+      <v-btn text to="/home">
+        <v-icon color="white" icon="mdi-home" size="large" />
+      </v-btn>
+      <v-btn text to="/match">
+        <v-icon color="white" icon="mdi-cards" size="large" />
+      </v-btn>
     </v-app-bar>
 
     <v-main>
