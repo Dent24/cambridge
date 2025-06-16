@@ -14,7 +14,7 @@
             <v-icon v-else-if="info.match" color="#ff2020" icon="mdi-heart-multiple" size="large" />
             <v-icon v-else color="grey-darken-1" icon="mdi-heart-outline" size="large" />
           </div>
-          <v-icon class="ml-3 cursor-pointer" color="grey-darken-1" icon="mdi-forum-outline" size="large" />
+          <v-icon class="ml-3 cursor-pointer" color="grey-darken-1" icon="mdi-forum-outline" size="large" @click="goChaat" />
         </div>
       </div>
       <v-row class="my-2" v-if="showLikeBtn">
@@ -54,6 +54,7 @@
 <script setup lang="ts">
 const { $axios } = useNuxtApp()
 const route = useRoute()
+const router = useRouter()
 
 useHead({
   title: '個人檔案'
@@ -72,6 +73,9 @@ const changeLike = async (value: number) => {
     snackbar.value = true
     showLikeBtn.value = false
   }
+}
+const goChaat = () => {
+  router.push('/chat/1')
 }
 
 onBeforeMount(async () => {

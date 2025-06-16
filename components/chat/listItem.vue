@@ -1,5 +1,5 @@
 <template>
-  <v-list-item class="user-item">
+  <v-list-item class="user-item" @click="toChat">
     <template v-slot:prepend>
       <img v-if="!imageError" :src="props.item.image" class="user-image" @error="imageOnError" />
       <div v-else class="user-image" />
@@ -21,9 +21,7 @@
 <script setup lang="ts">
 import dayjs from "dayjs";
 
-useHead({
-  title: '聊天列表'
-})
+const router = useRouter()
 
 const props = defineProps({
   item: Object
@@ -31,7 +29,10 @@ const props = defineProps({
 
 const imageError = ref(false)
 
-const imageOnError = (e: any) => {
+const toChat = () => {
+  router.push('/chat/1')
+}
+const imageOnError = () => {
   imageError.value = true
 }
 </script>

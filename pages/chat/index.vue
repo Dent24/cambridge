@@ -9,6 +9,10 @@
 <script setup lang="ts">
 const { $axios } = useNuxtApp()
 
+useHead({
+  title: '聊天列表'
+})
+
 const chatList = ref([])
 
 onBeforeMount(async () => {
