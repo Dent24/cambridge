@@ -56,6 +56,10 @@ const { $axios } = useNuxtApp()
 const route = useRoute()
 const router = useRouter()
 
+definePageMeta({
+  middleware: ['auth']
+})
+
 useHead({
   title: '個人檔案'
 })

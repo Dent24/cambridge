@@ -43,6 +43,10 @@ import _ from 'lodash'
 
 const { $axios } = useNuxtApp()
 
+definePageMeta({
+  middleware: ['auth']
+})
+
 const matchList = ref([])
 const nowMatch = ref({})
 const imageError = ref(false)

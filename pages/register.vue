@@ -38,12 +38,13 @@ const route = useRoute()
 const router = useRouter()
 const userStore = useUserStore()
 
-useHead({
-  title: '註冊'
+definePageMeta({
+  layout: 'clear',
+  middleware: ['no-auth']
 })
 
-definePageMeta({
-  layout: 'clear'
+useHead({
+  title: '註冊'
 })
 
 const formRef = ref()

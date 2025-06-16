@@ -36,12 +36,13 @@ const { $axios } = useNuxtApp()
 const router = useRouter()
 const userStore = useUserStore()
 
-useHead({
-  title: '登入'
+definePageMeta({
+  layout: 'clear',
+  middleware: ['no-auth']
 })
 
-definePageMeta({
-  layout: 'clear'
+useHead({
+  title: '登入'
 })
 
 const loginDialog = ref(false)

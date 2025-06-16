@@ -42,6 +42,14 @@ import dayjs from "dayjs";
 const { $axios } = useNuxtApp()
 const route = useRoute()
 
+definePageMeta({
+  middleware: ['auth']
+})
+
+useHead({
+  title: '聊天'
+})
+
 const chatInfo = ref({ history: [] })
 const newMessage = ref('')
 const messagesContainer = ref()

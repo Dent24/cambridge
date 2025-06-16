@@ -9,6 +9,10 @@
 <script setup lang="ts">
 const { $axios } = useNuxtApp()
 
+definePageMeta({
+  middleware: ['auth']
+})
+
 useHead({
   title: '聊天列表'
 })
