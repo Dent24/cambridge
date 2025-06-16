@@ -1,5 +1,5 @@
 <template>
-  <div class="user-block position-relative">
+  <div class="user-block position-relative" @click="goUser">
     <img v-if="!imageError" :src="props.item.image" class="user-image" @error="imageOnError" />
     <div class="user-info position-absolute">
       <p>{{ props.item.name }}</p>
@@ -11,6 +11,8 @@
 </template>
 
 <script setup lang="ts">
+const router = useRouter()
+
 const props = defineProps({
   item: {
     type: Object
@@ -21,19 +23,22 @@ const imageError = ref(false)
 
 const tipsColor = computed(() => {
   switch (true) {
-    case (!!props.item.match):
-      return 'match'
     case (props.item.like == 1):
       return 'not-like'
     case (props.item.like == 2):
       return 'uncertain'
     case (props.item.like == 3):
       return 'like'
+    case (!!props.item.match):
+      return 'match'
     default:
       return ''
   }
 })
 
+const goUser = () => {
+  router.push({ path: '/user/1' })
+}
 const imageOnError = (e: any) => {
   imageError.value = true
 }

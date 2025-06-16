@@ -144,6 +144,23 @@ export default () => {
 
     getNearby: async () => {
       return _.sortBy(femaleUsers, 'distance')
+    },
+
+    getMemberInfo: async (id: string) => {
+      return {
+        name: '陳宜蓁',
+        age: 28,
+        distance: 17000,
+        height: 165,
+        weight: 55,
+        images: ['https://picsum.photos/id/48/720/1080', 'https://picsum.photos/id/60/720/1080'],
+        like: 2,
+        match: false
+      }
+    },
+
+    setMemberLike: async (like: number) => {
+      return true
     }
   }
 }

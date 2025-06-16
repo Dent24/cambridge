@@ -8,7 +8,7 @@
     </v-app-bar>
 
     <v-main>
-      <v-container class="fill-height d-flex align-center justify-center">
+      <v-container class="fill-height justify-center align-start">
         <slot />
       </v-container>
     </v-main>
