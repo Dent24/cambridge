@@ -27,10 +27,10 @@ const tipsColor = computed(() => {
       return 'not-like'
     case (props.item.like == 2):
       return 'uncertain'
-    case (props.item.like == 3):
-      return 'like'
     case (!!props.item.match):
       return 'match'
+    case (props.item.like == 3):
+      return 'like'
     default:
       return ''
   }

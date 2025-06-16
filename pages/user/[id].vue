@@ -14,7 +14,7 @@
             <v-icon v-else-if="info.match" color="#ff2020" icon="mdi-heart-multiple" size="large" />
             <v-icon v-else color="grey-darken-1" icon="mdi-heart-outline" size="large" />
           </div>
-          <v-icon class="ml-3 cursor-pointer" color="grey-darken-1" icon="mdi-card-multiple-outline" size="large" />
+          <v-icon class="ml-3 cursor-pointer" color="grey-darken-1" icon="mdi-forum-outline" size="large" />
         </div>
       </div>
       <v-row class="my-2" v-if="showLikeBtn">

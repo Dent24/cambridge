@@ -9,6 +9,9 @@
       <v-btn text to="/match">
         <v-icon color="white" icon="mdi-cards" size="large" />
       </v-btn>
+      <v-btn text to="/chat">
+        <v-icon color="white" icon="mdi-forum-outline" size="large" />
+      </v-btn>
     </v-app-bar>
 
     <v-main>
