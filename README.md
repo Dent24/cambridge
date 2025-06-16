@@ -1,75 +1,30 @@
-# Nuxt Minimal Starter
+# 交友網站
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 使用技術
+- nuxt3
+- vue3
+- pinia
+- vuetify
+- dayjs
+- lodash
+- i18n(只有部分使用)
 
-## Setup
+## 使用版本
+- node: 22.16
 
-Make sure to install dependencies:
+## 主要功能需修正
+- 串接 API
+- 串接 FB 登入
+- 列表篩選
+- 圖片透過其他頁面進入會渲染不出來
+- i18n 完整套用
+- 新增會員資料修改頁面
+- 聊天室首次載入無法完全貼至最底
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 預計新增功能
+- 搜尋功能
+- 會員封鎖
+- 每日熱門(預計在每日首次登入網頁要出熱門列表)
+- 廣告功能
+- 紀錄訪客(不含配對訪客)
+- 送出愛心
